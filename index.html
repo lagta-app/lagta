@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>لقطة · Lagta — اقبل الرحلات المناسبة تلقائيًا</title>
-<meta name="description" content="لقطة: أداة تساعد السائقين على قبول عروض الرحلات المناسبة تلقائيًا وفق قواعدهم. Lagta helps drivers auto-accept the right ride offers by their own rules.">
+<title>لقطة — اقبل الرحلات المناسبة تلقائيًا</title>
+<meta name="description" content="لقطة: أداة تساعد السائقين على قبول عروض الرحلات المناسبة تلقائيًا وفق قواعدهم.">
 <style>
   :root{
     --green:#006C47; --green-d:#00552f; --mint:#74F3AF; --amber:#B65C00;
@@ -15,23 +15,34 @@
   body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;}
   a{color:var(--green);}
   .wrap{max-width:900px;margin:0 auto;padding:0 18px;}
+  /* top language bar */
+  .topbar{background:var(--green-d);}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding:8px 18px;}
+  .brandmini{display:flex;align-items:center;gap:8px;color:#fff;font-weight:700;}
+  .brandmini svg{width:26px;height:26px;}
+  .lang{display:flex;gap:6px;}
+  .lang a{display:inline-block;padding:5px 12px;border-radius:999px;font-size:13px;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.4);color:#fff;}
+  .lang a.active{background:var(--mint);color:var(--green-d);border-color:var(--mint);}
   /* hero */
-  header.hero{background:linear-gradient(160deg,var(--green),var(--green-d));color:#fff;padding:54px 0 48px;text-align:center;}
+  header.hero{background:linear-gradient(160deg,var(--green),var(--green-d));color:#fff;padding:46px 0 48px;text-align:center;}
   .mark{width:84px;height:84px;margin:0 auto 14px;display:block;}
   header.hero h1{margin:0;font-size:40px;letter-spacing:.5px;}
   header.hero .tag{font-size:19px;opacity:.95;margin-top:8px;}
-  header.hero .tag.en{font-size:15px;opacity:.85;direction:ltr;}
-  .cta{display:inline-block;margin-top:22px;background:var(--mint);color:var(--green-d);font-weight:700;padding:13px 26px;border-radius:999px;text-decoration:none;}
-  .cta.ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.6);margin-inline-start:10px;}
+  .btns{margin-top:24px;display:flex;flex-wrap:wrap;gap:12px;justify-content:center;}
+  .btn{display:inline-flex;align-items:center;gap:9px;font-weight:700;padding:13px 22px;border-radius:999px;text-decoration:none;font-size:15px;border:1.5px solid transparent;}
+  .btn.play{background:#111;color:#fff;cursor:default;}
+  .btn.play small{display:block;font-size:10px;font-weight:500;opacity:.8;line-height:1.1;}
+  .btn.play .pt{font-size:11px;background:var(--amber);color:#fff;padding:2px 7px;border-radius:999px;margin-inline-start:4px;}
+  .btn.contact{background:var(--mint);color:var(--green-d);}
+  .btn.ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.6);}
+  .btn svg{width:20px;height:20px;}
   /* sections */
   section{padding:40px 0;}
   h2{color:var(--green);font-size:24px;margin:0 0 6px;}
-  h2 .en{color:var(--muted);font-size:15px;font-weight:400;}
   .lead{color:var(--muted);margin:0 0 22px;}
   .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;}
   .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px;}
   .card h3{margin:0 0 6px;font-size:17px;}
-  .card h3 .en{color:var(--muted);font-size:13px;font-weight:400;}
   .card p{margin:0;color:var(--muted);font-size:14px;}
   .steps{counter-reset:s;display:grid;gap:12px;}
   .step{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;display:flex;gap:14px;align-items:flex-start;}
@@ -44,90 +55,123 @@
   footer a{color:#9ef3c6;}
   footer .links{margin:10px 0;}
   footer .links a{margin-inline-end:16px;}
-  .en{direction:ltr;}
   .muted{color:var(--muted);font-size:13px;}
 </style>
 </head>
 <body>
 
+<div class="topbar">
+  <div class="wrap">
+    <div class="brandmini">
+      <svg viewBox="0 0 96 96" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="48" cy="48" r="46" fill="#ffffff" fill-opacity="0.15"/>
+        <path d="M22 58c0-2 1-3 3-3h46c2 0 3 1 3 3v8c0 1-1 2-2 2h-4a6 6 0 0 1-12 0H40a6 6 0 0 1-12 0h-4c-1 0-2-1-2-2v-8z" fill="#fff"/>
+        <path d="M28 55l5-11c.6-1.4 1.9-2 3-2h20c1.3 0 2.4.7 3 2l5 11H28z" fill="#74F3AF"/>
+        <path d="M66 20c-6 0-11 5-11 11 0 8 11 18 11 18s11-10 11-18c0-6-5-11-11-11z" fill="#B65C00"/>
+        <circle cx="66" cy="31" r="4.2" fill="#fff"/>
+      </svg>
+      لقطة
+    </div>
+    <div class="lang">
+      <a href="index.html" class="active">العربية</a>
+      <a href="en.html">English</a>
+    </div>
+  </div>
+</div>
+
 <header class="hero">
   <div class="wrap">
     <svg class="mark" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <circle cx="48" cy="48" r="46" fill="#ffffff" fill-opacity="0.12"/>
-      <!-- car body -->
       <path d="M22 58c0-2 1-3 3-3h46c2 0 3 1 3 3v8c0 1-1 2-2 2h-4a6 6 0 0 1-12 0H40a6 6 0 0 1-12 0h-4c-1 0-2-1-2-2v-8z" fill="#ffffff"/>
       <path d="M28 55l5-11c.6-1.4 1.9-2 3-2h20c1.3 0 2.4.7 3 2l5 11H28z" fill="#74F3AF"/>
       <circle cx="34" cy="66" r="4" fill="#00552f"/>
       <circle cx="62" cy="66" r="4" fill="#00552f"/>
-      <!-- pickup pin -->
       <path d="M66 20c-6 0-11 5-11 11 0 8 11 18 11 18s11-10 11-18c0-6-5-11-11-11z" fill="#B65C00"/>
       <circle cx="66" cy="31" r="4.2" fill="#fff"/>
     </svg>
     <h1>لقطة</h1>
     <div class="tag">اقبل الرحلات المناسبة تلقائيًا — وفق قواعدك أنت</div>
-    <div class="tag en">Lagta — auto-accept the right ride offers, by your own rules</div>
-    <div>
-      <a class="cta" href="#get">احصل على التطبيق · Get the app</a>
-      <a class="cta ghost" href="#how">كيف يعمل · How it works</a>
+    <div class="btns">
+      <span class="btn play" role="button" aria-disabled="true">
+        <svg viewBox="0 0 24 24" fill="#74F3AF" aria-hidden="true"><path d="M3 2.5v19l16-9.5z"/></svg>
+        <span>Google Play<small>قريبًا</small></span>
+        <span class="pt">قريبًا</span>
+      </span>
+      <a class="btn contact" href="mailto:lagta.app@gmail.com">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm8 7L4 6.5V6l8 4.5L20 6v.5z"/></svg>
+        تواصل معنا
+      </a>
+      <a class="btn ghost" href="#how">كيف يعمل</a>
     </div>
   </div>
 </header>
 
 <section id="how">
   <div class="wrap">
-    <h2>كيف يعمل <span class="en">· How it works</span></h2>
+    <h2>كيف يعمل</h2>
     <p class="lead">اضبط قواعدك مرة واحدة، ودع «لقطة» يلتقط الرحلة المناسبة بسرعة.</p>
     <div class="steps">
-      <div class="step"><div><strong>اضبط قواعدك.</strong> حدّد الحد الأدنى للأجرة، وأقصى مسافة أو وقت للوصول إلى الراكب. <span class="muted en">Set your rules: minimum fare, max distance or time to the rider.</span></div></div>
-      <div class="step"><div><strong>شغّل القبول التلقائي.</strong> يراقب «لقطة» عروض الرحلات في تطبيق السائق الذي تستخدمه. <span class="muted en">Turn on auto-accept; Lagta watches offers in your driver app.</span></div></div>
-      <div class="step"><div><strong>التقط الرحلة.</strong> عند مطابقة العرض لقواعدك، يضغط «قبول» نيابةً عنك في لحظات. <span class="muted en">When an offer matches, it taps Accept for you in moments.</span></div></div>
+      <div class="step"><div><strong>اضبط قواعدك.</strong> حدّد الحد الأدنى للأجرة، وأقصى مسافة أو وقت للوصول إلى الراكب.</div></div>
+      <div class="step"><div><strong>شغّل القبول التلقائي.</strong> يراقب «لقطة» عروض الرحلات في تطبيق السائق الذي تستخدمه.</div></div>
+      <div class="step"><div><strong>التقط الرحلة.</strong> عند مطابقة العرض لقواعدك، يضغط «قبول» نيابةً عنك في لحظات.</div></div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>لماذا لقطة <span class="en">· Why Lagta</span></h2>
+    <h2>لماذا لقطة</h2>
     <div class="grid">
-      <div class="card"><h3>بسيط وعربي <span class="en">· Simple, Arabic-first</span></h3><p>مصمّم للسائقين، واجهة واضحة وسهلة بلا تعقيد.</p></div>
-      <div class="card"><h3>أنت المتحكم <span class="en">· You stay in control</span></h3><p>تشغّل القبول التلقائي وتوقفه متى شئت، والقواعد قواعدك.</p></div>
-      <div class="card"><h3>قواعد متعددة <span class="en">· Multiple rules</span></h3><p>قاعدة رئيسية وقواعد احتياطية تُجرّب بالترتيب حتى تُقبل الرحلة.</p></div>
-      <div class="card"><h3>يحترم خصوصيتك <span class="en">· Privacy-respecting</span></h3><p>بلا تسجيل للشاشة، وبلا جمع لأسماء أو عناوين أو مواقع.</p></div>
-      <div class="card"><h3>بلا إعلانات <span class="en">· No ads</span></h3><p>تجربة نظيفة تمامًا، بلا إعلانات مزعجة.</p></div>
-      <div class="card"><h3>سريع <span class="en">· Fast</span></h3><p>يقرأ العرض ويستجيب في أجزاء من الثانية.</p></div>
+      <div class="card"><h3>بسيط وعربي</h3><p>مصمّم للسائقين، واجهة واضحة وسهلة بلا تعقيد.</p></div>
+      <div class="card"><h3>أنت المتحكم</h3><p>تشغّل القبول التلقائي وتوقفه متى شئت، والقواعد قواعدك.</p></div>
+      <div class="card"><h3>قواعد متعددة</h3><p>قاعدة رئيسية وقواعد احتياطية تُجرّب بالترتيب حتى تُقبل الرحلة.</p></div>
+      <div class="card"><h3>يحترم خصوصيتك</h3><p>بلا تسجيل للشاشة، وبلا جمع لأسماء أو عناوين أو مواقع.</p></div>
+      <div class="card"><h3>بلا إعلانات</h3><p>تجربة نظيفة تمامًا، بلا إعلانات مزعجة.</p></div>
+      <div class="card"><h3>سريع</h3><p>يقرأ العرض ويستجيب في أجزاء من الثانية.</p></div>
     </div>
   </div>
 </section>
 
 <section>
   <div class="wrap">
-    <h2>السعر <span class="en">· Pricing</span></h2>
+    <h2>السعر</h2>
     <div class="price">
-      <div class="big">1 د.أ <small>/ شهريًا · per month</small></div>
-      <div class="trial">تجربة مجانية 14 يومًا · 14-day free trial</div>
-      <p class="muted" style="margin-top:14px;">فعّل اشتراكك برمز تفعيل أو عبر وسيلة الدفع المتاحة. · Activate with a code or the available payment method.</p>
+      <div class="big">1 د.أ <small>/ شهريًا</small></div>
+      <div class="trial">تجربة مجانية 14 يومًا</div>
+      <p class="muted" style="margin-top:14px;">فعّل اشتراكك برمز تفعيل أو عبر وسيلة الدفع المتاحة.</p>
     </div>
   </div>
 </section>
 
 <section id="get">
   <div class="wrap">
-    <h2>احصل على التطبيق <span class="en">· Get the app</span></h2>
-    <p class="lead">سيتوفّر قريبًا على Google Play. · Coming soon to Google Play.</p>
-    <p class="muted">للاستفسار أو طلب رمز تفعيل: <code>lagta.app@gmail.com</code> · For questions or an activation code: <code>lagta.app@gmail.com</code></p>
+    <h2>احصل على التطبيق</h2>
+    <p class="lead">سيتوفّر قريبًا على Google Play.</p>
+    <div class="btns" style="justify-content:flex-start;">
+      <span class="btn play" role="button" aria-disabled="true">
+        <svg viewBox="0 0 24 24" fill="#74F3AF" aria-hidden="true"><path d="M3 2.5v19l16-9.5z"/></svg>
+        <span>Google Play<small>قريبًا</small></span>
+      </span>
+      <a class="btn contact" href="mailto:lagta.app@gmail.com">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm8 7L4 6.5V6l8 4.5L20 6v.5z"/></svg>
+        تواصل معنا
+      </a>
+    </div>
+    <p class="muted" style="margin-top:14px;">للاستفسار أو طلب رمز تفعيل: <a href="mailto:lagta.app@gmail.com">lagta.app@gmail.com</a></p>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div><strong>لقطة · Lagta</strong></div>
+    <div><strong>لقطة</strong></div>
     <div class="links">
-      <a href="privacy.html">سياسة الخصوصية · Privacy Policy</a>
-      <a href="terms.html">شروط الاستخدام · Terms of Use</a>
+      <a href="privacy.html">سياسة الخصوصية</a>
+      <a href="terms.html">شروط الاستخدام</a>
+      <a href="en.html">English</a>
     </div>
     <div class="muted" style="color:#9fb8ac;">
-      لقطة أداة مستقلة غير تابعة لأي شركة نقل أو تطبيق توصيل.<br>
-      Lagta is an independent tool, not affiliated with any transport or ride-hailing service.
+      لقطة أداة مستقلة غير تابعة لأي شركة نقل أو تطبيق توصيل.
     </div>
   </div>
 </footer>

@@ -3,40 +3,48 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>سياسة الخصوصية · Privacy Policy — لقطة / Lagta</title>
+<title>سياسة الخصوصية — لقطة</title>
 <style>
-  :root { --green:#006C47; --bg:#f6f8f6; --card:#fff; --ink:#1b1b1f; --muted:#5b625c; --line:#e0e6e0; }
+  :root { --green:#006C47; --green-d:#00552f; --mint:#74F3AF; --bg:#f6f8f6; --card:#fff; --ink:#1b1b1f; --muted:#5b625c; --line:#e0e6e0; }
   * { box-sizing:border-box; }
   body { margin:0; font-family: system-ui,-apple-system,"Segoe UI",Tahoma,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.7; }
-  header { background:var(--green); color:#fff; padding:22px 20px; }
+  header { background:var(--green); color:#fff; padding:18px 20px; }
+  .hwrap{max-width:820px;margin:0 auto;}
+  .toprow{display:flex;align-items:center;justify-content:space-between;gap:10px;}
   header h1 { margin:0; font-size:22px; }
-  header .sub { opacity:.9; font-size:14px; margin-top:4px; }
+  .lang{display:flex;gap:6px;}
+  .lang a{display:inline-block;padding:5px 12px;border-radius:999px;font-size:13px;font-weight:600;text-decoration:none;border:1px solid rgba(255,255,255,.4);color:#fff;}
+  .lang a.active{background:var(--mint);color:var(--green-d);border-color:var(--mint);}
+  .nav { margin-top:12px; }
+  .nav a { color:#fff; text-decoration:underline; font-size:14px; margin-inline-end:16px; }
   main { max-width:820px; margin:0 auto; padding:20px 18px 60px; }
-  section.lang { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:20px 22px; margin:18px 0; }
-  h2 { color:var(--green); font-size:20px; margin:4px 0 14px; }
-  h3 { font-size:16px; margin:20px 0 6px; }
+  section.body { background:var(--card); border:1px solid var(--line); border-radius:16px; padding:22px 24px; margin:18px 0; }
+  h2 { color:var(--green); font-size:22px; margin:4px 0 14px; }
+  h3 { font-size:16px; margin:22px 0 6px; }
   p, li { font-size:15px; }
   ul { padding-inline-start:22px; }
   .meta { color:var(--muted); font-size:13px; }
-  .en { direction:ltr; text-align:left; }
-  .nav a { color:#fff; text-decoration:underline; font-size:14px; margin-inline-end:14px; }
   code { background:#eef3ee; padding:1px 5px; border-radius:5px; font-size:13px; }
-  hr { border:none; border-top:1px solid var(--line); margin:26px 0; }
 </style>
 </head>
 <body>
 <header>
-  <h1>سياسة الخصوصية — لقطة</h1>
-  <div class="sub">Privacy Policy — Lagta</div>
-  <div class="nav" style="margin-top:10px;">
-    <a href="index.html">الرئيسية / Home</a>
-    <a href="terms.html">شروط الاستخدام / Terms</a>
+  <div class="hwrap">
+    <div class="toprow">
+      <h1>سياسة الخصوصية — لقطة</h1>
+      <div class="lang">
+        <a href="privacy.html" class="active">العربية</a>
+        <a href="privacy-en.html">English</a>
+      </div>
+    </div>
+    <div class="nav">
+      <a href="index.html">الرئيسية</a>
+      <a href="terms.html">شروط الاستخدام</a>
+    </div>
   </div>
 </header>
 <main>
-
-  <!-- ======================= ARABIC ======================= -->
-  <section class="lang">
+  <section class="body">
     <h2>سياسة الخصوصية</h2>
     <p class="meta">آخر تحديث: 22 تشرين الثاني (نوفمبر) 2026</p>
 
@@ -78,53 +86,6 @@
     <h3>التواصل</h3>
     <p>للاستفسارات أو طلبات الحذف: <code>lagta.app@gmail.com</code></p>
   </section>
-
-  <hr>
-
-  <!-- ======================= ENGLISH ======================= -->
-  <section class="lang en" dir="ltr" lang="en">
-    <h2>Privacy Policy</h2>
-    <p class="meta">Last updated: 22 November 2026</p>
-
-    <p>Lagta (the "App") is a tool that helps drivers manage ride offers with rules they set themselves. We respect your privacy. This policy explains what we collect, what we do not, and how we use it.</p>
-
-    <h3>Data we collect</h3>
-    <ul>
-      <li><strong>An anonymous device identifier:</strong> a random value generated inside the App to tell devices apart for statistics and to manage your subscription. It is not linked to your name, phone number, or your account in any other app.</li>
-      <li><strong>Offer details (anonymous):</strong> the fare amount, distance to the rider, estimated time, flags such as whether a bonus or surge is present, the decision made (accept or skip), the response speed, and the outcome of the attempt.</li>
-      <li><strong>Your rule settings:</strong> the thresholds you set (minimum fare, maximum distance, maximum time) to improve accept accuracy.</li>
-      <li><strong>Subscription status:</strong> whether your trial is active or an activation code has been used.</li>
-    </ul>
-
-    <h3>What we never collect</h3>
-    <ul>
-      <li>No names, phone numbers, or email addresses.</li>
-      <li>No addresses, trip destinations, pickup/drop-off points, or your geographic location.</li>
-      <li>No screen recording or screenshots, and we read nothing outside the ride-offer fields.</li>
-    </ul>
-
-    <h3>Accessibility service</h3>
-    <p>The App uses the Accessibility service to read the ride-offer screen in your supported driver app (fare, distance, time), compare it against your rules, and tap Accept or Reject for you once you have turned auto-accept on yourself. Screen content is processed on your device only and is not sent to our servers.</p>
-
-    <h3>How we use data</h3>
-    <p>We use the anonymous data to operate the App, manage subscriptions, and measure and improve accept accuracy. We do not use it for advertising.</p>
-
-    <h3>Sharing with third parties</h3>
-    <p>We do not sell your data or share it for marketing. We use a cloud service provider to store and process the anonymous data on our behalf, bound to protect it.</p>
-
-    <h3>Security, retention, and deletion</h3>
-    <p>Data is transmitted over an encrypted connection. You can request deletion of your device's anonymous data by contacting us at the address below.</p>
-
-    <h3>Children</h3>
-    <p>The App is intended for adult drivers and not for children under 16.</p>
-
-    <h3>Changes</h3>
-    <p>We may update this policy; the last-updated date above will change.</p>
-
-    <h3>Contact</h3>
-    <p>For questions or deletion requests: <code>lagta.app@gmail.com</code></p>
-  </section>
-
 </main>
 </body>
 </html>
